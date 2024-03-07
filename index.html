@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Petal-Prose/assets/css/style.css" />
+  <title>Petal Prose</title>
+</head>
+<body>
+    <header>
+      <h1>There's beauty to be found in the unknown.</h1>
+      <button class="theme-toggle">Toggle Theme</button>
+      <button id="backButton">Back</button>      
+  </header>
+  
+  <main>
+      <div id="blogPosts"></div>
+
+      <form id="blogForm">
+          <input type="text" id="username" placeholder="Your Name" required autocomplete="name">
+          <input type="text" id="title" placeholder="Blog Title" required autocomplete="off">
+          <textarea id="content" placeholder="Write your blog post" required autocomplete="off"></textarea>
+          <button type="submit">Submit Post</button>
+      </form>
+
+      <div class="card" id="submittedPost" style="display: none;">
+        <h2 id="submittedtTitle"></h2>
+        <p><strong>Posted by:</strong> <span id="submittedAuthor"></span></p>
+        <p id="submittedContent"></p>
+      </div>
+  </main>
+
+  <footer>
+      <p><a href="https://www.yourblog.com">More Posts</a></p>
+  </footer>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const themeToggle = document.querySelector('.theme-toggle');
+          const body = document.body;
+
+          themeToggle.addEventListener('click', function() {
+              body.classList.toggle('dark-mode');
+          });
+
+          const backButton = document.getElementById('backButton');
+          backButton.addEventListener('click', function() {
+              window.history.back();
+           });
+        });
+    </script>
+
+    <script src="./assets/js/logic.js"></script>
+</body>
+</html>
